@@ -1,1 +1,3 @@
 theme: jekyll-theme-cayman
+title: nf-core
+description: nf-core: a collection of high quality Nextflow pipelines.
