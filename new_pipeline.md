@@ -31,7 +31,7 @@ If possible, it's great if pipelines can also have:
 * Benchmarks from running on cloud environments such as [AWS](https://aws.amazon.com/)
 
 ## Pipeline organisation
-It's highly recommended that pipelines are built using the [NGI-NFcookiecutter](https://github.com/SciLifeLab/NGI-NFcookiecutter) starter template, as future developments are likely to be based on this assumption (see [_future plans_](#plans-for-the-future) below).
+It's highly recommended that pipelines are built using the [cookiecutter](https://github.com/nf-core/cookiecutter) starter template, as future developments are likely to be based on this assumption (see [_future plans_](#plans-for-the-future) below).
 
 ## Coding style
 

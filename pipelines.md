@@ -17,6 +17,6 @@ Ok, so it's early days and we haven't ported any pipelines across just yet. They
 
 Note that these are not all complete pipelines - some are still under heavy development.
 
-Most pipelines follow conventions seen in the [NGI-NFcookiecutter](https://github.com/SciLifeLab/NGI-NFcookiecutter) pipeline template.
+Most pipelines follow conventions seen in the [nf-core/cookiecutter](https://github.com/nf-core/cookiecutter) pipeline template.
 
 Got another that would fit in well? [Let us know!](https://github.com/nf-core/nf-core.github.io/issues/new)
