@@ -5,7 +5,8 @@
 
 This repository contains the files used to generate the documentation website for nf-core: https://nf-core.github.io/
 
-The website uses [GitHub Pages](https://pages.github.com/) with the [Cayman theme](https://github.com/pages-themes/cayman). There are a few customisations to override parts of the default template (see `_layouts` and `assets/css`). Under the hood, the website files are being dynamically generated using [Jekyll](https://pages.github.com/).
+The website uses [GitHub Pages](https://pages.github.com/) with the [Cayman theme](https://github.com/pages-themes/cayman). There are a few customisations to override parts of the default template (see `_layouts` and `assets/css`).
+Under the hood, the website files are being dynamically generated using [Jekyll](https://jekyllrb.com/).
 
 If you prefer, you can read all of the website content on GitHub.com instead:
 
