@@ -1,0 +1,34 @@
+---
+---
+/* Import the GitHub Pages styles */
+@import "{{ site.theme }}";
+
+/* Custom styles */
+.site-logo {
+    max-width: 32rem;
+    margin: 2rem auto 0;
+}
+.site-logo img {
+    max-width: 100%;
+}
+@media screen and (min-width: 42em) {
+    .page-header {
+        padding: 1rem 4rem;
+    }
+}
+@media screen and (max-width: 42em) {
+    .page-header {
+        padding: 1rem;
+    }
+}
+.page-header .btn {
+    margin-bottom: 0;
+}
+
+.site-footer-credits {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+.site-footer-credits a {
+    color: #a0bbd6;
+}
