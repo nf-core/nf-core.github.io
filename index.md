@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+## Welcome to nf-core
 
-You can use the [editor on GitHub](https://github.com/nf-core/nf-core.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+nf-core is a GitHub organisation containing a curated set of
+analysis pipelines built using [nextflow](https://www.nextflow.io/) -
+a tool and language that can be used for highly scalable
+and portable workflows.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Nextflow is an incredibly flexible and powerful tool. Like any tool,
+it comes with a learning curve. Here, we have collected a number of
+pipelines written using Nextflow that all adhere to a set of "best practice"
+guidelines. This means that if one works on your system, then they all should.
 
-### Markdown
+These pipelines can be used as they are _(why reinvent the wheel?)_, can be used
+as inspiration, or can be used as a starting point for something different.
+Everything is released with the MIT licence, so you're free to use the code
+however you would like.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Pipeline Features
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nf-core/nf-core.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### How it works
