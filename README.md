@@ -12,7 +12,7 @@ If you prefer, you can read all of the website content on GitHub.com instead:
 
 * [Homepage](index.md)
 * [Pipelines](pipelines.md)
-* [Docs](new_pipeline.md)
+* [Docs](docs.md)
 * [About](about.md)
 
 Otherwise, head over to https://nf-core.github.io and enjoy!

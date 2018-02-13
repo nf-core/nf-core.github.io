@@ -4,6 +4,9 @@
 @import "{{ site.theme }}";
 
 /* Custom styles */
+p {
+    text-align: justify;
+}
 .site-logo {
     max-width: 34rem;
     margin: 0 auto;

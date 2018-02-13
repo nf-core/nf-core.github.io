@@ -26,7 +26,7 @@ For bonus points, it's recommended that pipelines have (in addition to above):
 * Explicit support for running in cloud environments (eg. use of [AWS-iGenomes](https://ewels.github.io/AWS-iGenomes/))
 * Benchmarks from running on cloud environments such as [AWS](https://aws.amazon.com/)
 
-Want to add a new pipeline to the collection? Head over to the [documentation](new_pipeline) to see how.
+Want to add a new pipeline to the collection? Head over to the [documentation](docs) to see how.
 
 ## How to use a pipeline
 
