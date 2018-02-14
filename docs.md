@@ -18,8 +18,10 @@ All pipelines must adhere to the following:
     * No snakemake allowed! For now, anyway. Sorry.
     * Please note the coding guidelines below
 * An [MIT licence](https://choosealicense.com/licenses/mit/)
-* Software bundled using [Docker](https://www.docker.com/) and [Singularity](http://singularity.lbl.gov/)
-    * It's expected to basically just build for Docker and ship with Nextflow profiles for singularity that pull from the docker repository.
+* Software bundled using [Docker](https://www.docker.com/)
+    * This must be a build script in the repository (a `Dockerfile`)
+    * Automatic builds will be set up with tagged versions for GitHub releases
+    * Pipelines should ship with Nextflow profiles for singularity that pull from the docker repository.
 * Continuous integration testing
 * Stable release tags
 * Common pipeline structure and usage
