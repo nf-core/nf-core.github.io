@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
+    <div class="corner-ribbon top-left shadow desktop-only" style="background-color: #ed2067;">
+      <a href="https://gitter.im/nf-core/Lobby" target="_blank" title="Open nf-core chat room on Gitter">Chat: Gitter</a>
+    </div>
+    <div class="corner-ribbon top-right shadow desktop-only" style="background-color: #333;">
+      <a href="https://github.com/nf-core" target="_blank" title="Go to nf-core on GitHub">GitHub</a>
+    </div>
     <section class="site-logo">
       <h1 class="project-name"><img src="assets/logo/nf-core-logo.png"></h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
@@ -19,7 +25,8 @@
       <a href="pipelines" class="btn" title="List of pipelines available with nf-core">Pipelines</a>
       <a href="docs" class="btn" title="Documentation about adding new pipelines to nf-core">Docs</a>
       <a href="about" class="btn" title="How nf-core was started and who is involved">About</a>
-      <a href="https://gitter.im/nf-core/Lobby" target="_blank" class="btn" title="Open nf-core chat room on Gitter">Gitter</a>
+      <a href="https://gitter.im/nf-core/Lobby" class="btn mobile-only" target="_blank" title="Open nf-core chat room on Gitter">Chat: Gitter</a>
+      <a href="https://github.com/nf-core" class="btn mobile-only" target="_blank" title="Go to nf-core on GitHub">GitHub</a>
     </section>
 
     <section class="main-content">
