@@ -26,6 +26,9 @@ All pipelines must adhere to the following:
 * Stable release tags
 * Common pipeline structure and usage
 * Excellent documentation
+* A responsible contact person / GitHub username
+    * This will typically be the main person behind the pipeline development
+    * This person should be responsible for basic maintenance and questions
 
 _(any point can be skipped, given a good enough reason...)_
 
