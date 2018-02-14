@@ -29,6 +29,8 @@ All pipelines must adhere to the following:
 * A responsible contact person / GitHub username
     * This will typically be the main person behind the pipeline development
     * This person should be responsible for basic maintenance and questions
+* The pipeline must not have any failures in the `nf-core lint` tests
+    * These tests are run by the [nf-core/tools](https://github.com/nf-core/tools) package and validate the requirements listed on this page.
 
 _(any point can be skipped, given a good enough reason...)_
 
