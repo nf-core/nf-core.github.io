@@ -17,7 +17,7 @@ If you prefer, you can read all of the website content on GitHub.com instead:
 
 Otherwise, head over to https://nf-core.github.io and enjoy!
 
-## Forking and local development of nf-core.github.io
+## Contributing to nf-core.github.io
 
 If you want to contribute to nf-core's documentation, it would be awesome to render the websites on your local fork accordingly, before submitting a pull request.
 
