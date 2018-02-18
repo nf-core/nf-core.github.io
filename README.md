@@ -23,41 +23,4 @@ If you want to contribute to nf-core's documentation, it would be awesome to ren
 
 The underlying site generator is [Jekyll](https://jekyllrb.com/), which uses [Liquid](http://shopify.github.io/liquid/) as template engine.
 
-### Basic setup
-
-First, make sure you have installed `ruby`, `git` and some gems. Please check out how to install ruby and git on your OS for yourself (example shows the Arch Linux way).
-
-```
-# Arch Linux ruby installation
-sudo pacman -S ruby git
-gem install jekyll jekyll-theme-cayman
-```
-
-Be sure you have `~/.gem/ruby/.../bin` in your PATH environmental variable, otherwise the jekyll executable will not be found.
-
-### Clone your fork of nf-core.github.io
-
-First, [fork](https://help.github.com/articles/fork-a-repo/) the original repository on GitHub. Then clone the fork on your OS:
-
-```
-# Clone using SSH
-git clone git@github.com:<your-profile>/nf-core.github.io.git
-# Clone using HTTPS
-https://github.com/<your-profile>/nf-core.github.io.git
-```
-
-### Build pages
-
-Now `cd` in your git repository and build the pages:
-
-```
-jekyll build
-```
-
-You should now see a `_site` directory, that has been created by Jekyll. This is where the converted files are hosted. Now start a local web server instance to see the rendered website:
-
-```
-jekyll serve
-```
-
-The default address usually is `http://127.0.0.1:4000`. Type it in your browser's address bar and check the result.
+Please check the GitHub's [documentation](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) on how to setup Jekyll for GitHub Pages.
