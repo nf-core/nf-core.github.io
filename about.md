@@ -32,7 +32,7 @@ nf-core is by design a collaborative effort, and would not exist if it were not 
     * Senthil ([@senthil10](https://github.com/senthil10/))
 * QBiC Tübingen
     * Alexander Peltzer ([@apeltzer](https://github.com/apeltzer))
-    * Sven F. ([@sven1103](https://github.com/sven1103))
+    * Sven Fillinger ([@sven1103](https://github.com/sven1103))
 * GIS Singapore
     * Andreas Wilm ([@andreas-wilm](https://github.com/andreas-wilm))
     * Chih Chuan ([@shihcc](https://github.com/shihcc))

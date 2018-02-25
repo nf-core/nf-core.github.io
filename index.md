@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Curated nextflow pipelines
 [**nf-core**](https://github.com/nf-core) is a community effort to collect a curated set of analysis pipelines built using [Nextflow](https://www.nextflow.io/): a workflow manager that can be used for highly scalable and portable workflows.
 

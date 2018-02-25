@@ -16,3 +16,11 @@ If you prefer, you can read all of the website content on GitHub.com instead:
 * [About](about.md)
 
 Otherwise, head over to https://nf-core.github.io and enjoy!
+
+## Contributing to nf-core.github.io
+
+If you want to contribute to nf-core's documentation, it would be awesome to render the websites on your local fork accordingly, before submitting a pull request.
+
+The underlying site generator is [Jekyll](https://jekyllrb.com/), which uses [Liquid](http://shopify.github.io/liquid/) as template engine.
+
+Please check the GitHub's [documentation](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) on how to setup Jekyll for GitHub Pages.
