@@ -13,7 +13,7 @@ As the number of people interested in these common pipelines grew, it seemed sil
 A number of groups are involved in running, maintaining and developing pipelines that are part of nf-core. They are:
 
 * The [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), SciLifeLab Sweden
-* The [Quantitative Biology Center](qbic.life) (QBiC), Universität Tübinge, Germany
+* The [Quantitative Biology Center](qbic.life) (QBiC), Universität Tübingen, Germany
 * The [Genomics Institute of Singapore](https://www.a-star.edu.sg/gis) (GIS), A*STAR, Singapore
 
 Is your group missing? Please [submit a pull request](https://github.com/nf-core/nf-core.github.io/blob/master/about.md) to add yourself!
