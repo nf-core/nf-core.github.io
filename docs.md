@@ -22,7 +22,7 @@ All pipelines must adhere to the following:
     * Please note the coding guidelines below
 * An [MIT licence](https://choosealicense.com/licenses/mit/)
 * Software bundled using [Docker](https://www.docker.com/)
-    * This must be a build script in the repository (a `Dockerfile`)
+    * This must be at least one `Dockerfile` in the repository
     * Automatic builds will be set up with tagged versions for GitHub releases
     * Pipelines should ship with Nextflow profiles for singularity that pull from the docker repository.
 * Continuous integration testing
