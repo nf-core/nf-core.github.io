@@ -24,3 +24,15 @@ If you want to contribute to nf-core's documentation, it would be awesome to ren
 The underlying site generator is [Jekyll](https://jekyllrb.com/), which uses [Liquid](http://shopify.github.io/liquid/) as template engine.
 
 Please check the GitHub's [documentation](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) on how to setup Jekyll for GitHub Pages.
+
+In short, to get started:
+
+1. Ensure you have Ruby installed _(we recommend using [rbenv](https://github.com/rbenv/rbenv) on OSX)_
+2. Install bundler: `gem install bundler`
+3. Fork and clone this repository
+4. Go to the repository folder and run `bundle install`
+
+Once you've done this, you just need to go to the repository directory and run the webserver:
+```
+bundle exec jekyll serve
+```
