@@ -47,3 +47,40 @@ p {
 .site-footer-credits a {
     color: #a0bbd6;
 }
+
+#markdown-toc::before {
+    content: 'Table of Contents';
+    color: #159957;
+    font-size: 2em;
+    margin-left: -40px;
+}
+#markdown-toc > li:first-child {
+    margin-top: 1rem;
+}
+#markdown-toc li li {
+    font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 900px) {
+    #markdown-toc::before {
+        font-size: 1.6em;
+        margin-left: 0;
+    }
+    #markdown-toc {
+        position: absolute;
+        left: 1rem;
+        top: 26rem;
+        width: 18rem;
+        padding-left: 0;
+        list-style-type: none;
+    }
+    #markdown-toc.fixed {
+        position: fixed;
+        top: 3rem;
+    }
+    .main-content.has-toc {
+        max-width: none;
+        padding: 2rem;
+        margin: 0 0 0 19rem;
+    }
+}

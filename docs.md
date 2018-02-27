@@ -2,6 +2,9 @@
 layout: default
 ---
 
+* TOC
+{:toc}
+
 # Introduction
 These pages are still very much under construction and are likely to change a lot in the near future. If you have thoughts please join the discussion!
 
