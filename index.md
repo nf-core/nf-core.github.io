@@ -17,6 +17,7 @@ To be included, every pipeline must come with the following features:
 * Built using Nextflow
 * An [MIT licence](https://choosealicense.com/licenses/mit/)
 * Software bundled using [Docker](https://www.docker.com/) and [Singularity](http://singularity.lbl.gov/)
+* Include a minimal test dataset and a configuration profile named `test`
 * Continuous integration testing
 * Stable release tags
 * Common pipeline structure and usage
