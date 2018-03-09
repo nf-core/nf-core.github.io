@@ -66,12 +66,16 @@ The following variables fail the test if missing:
 * `nf_required_version`
     * The minimum version of Nextflow required to run the pipeline.
     * This should correspond to the `NXF_VER` version tested by Travis.
+* `params.outdir`
+    * A directory in which all pipeline results should be saved
 * `manifest.description`
     * A description of the pipeline
 * `manifest.homePage`
     * The homepage for the pipeline. Should be the nf-core GitHub repository URL.
 * `timeline.enabled`, `trace.enabled`, `report.enabled`
     * The nextflow timeline, trace and report should be enabled by default
+* `process.cpus`, `process.memory`, `process.time`
+    * Default CPUs, memory and time limits for tasks
 
 The following variables throw warnings if missing:
 
@@ -79,4 +83,11 @@ The following variables throw warnings if missing:
     * The filename of the main pipeline script (recommended to be `main.nf`)
 * `timeline.file`, `trace.file`, `report.file`
     * Default filenames for the timeline, trace and report
-    * Should be `${params.outdir}/pipeline_info/trace.[workflowname].txt"
+    * Should be `${params.outdir}/pipeline_info/trace.[workflowname].txt"``
+* `process.container`
+    * A single default container for use by all processes
+* `params.reads`
+    * Input parameter to specify input data (typically FastQ files / pairs)
+* `params.singleEnd`
+    * Specify to work with single-end sequence data instead of default paired-end
+    * Used with Nextflow: `.fromFilePairs( params.reads, size: params.singleEnd ? 1 : 2 )`
