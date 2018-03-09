@@ -91,3 +91,19 @@ The following variables throw warnings if missing:
 * `params.singleEnd`
     * Specify to work with single-end sequence data instead of default paired-end
     * Used with Nextflow: `.fromFilePairs( params.reads, size: params.singleEnd ? 1 : 2 )`
+
+## <a name="5"></a>Error #5 - Continuous Integration configuration
+nf-core pipelines must have CI testing with Travis or Circle CI.
+
+This test fails if the following happens:
+
+* `.travis.yml` does not contain the string `nf-core lint ${TRAVIS_BUILD_DIR}` under `script`
+* `.travis.yml` does not test the Nextflow version specified in the pipeline as `nf_required_version`
+    * This is expected in the `env` section of the config, eg:
+    ```yaml
+    env:
+      - NXF_VER=0.27.0
+      - NXF_VER=''
+    ```
+    * At least one of these `NXF_VER` variables must match the `nf_required_version` version specified in the pipeline config
+    * Other variables can be specified on these lines as long as they are space separated.
