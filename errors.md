@@ -15,7 +15,7 @@ nf-core pipelines should adhere to a common file structure for consistency. The 
     * A docker build script to generate a docker image with the required software
 * `.travis.yml` or `circle.yml`
     * A config file for automated continuous testing with either [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/)
-* `LICENSE` or `LICENCE.md`
+* `LICENSE`, `LICENSE.md`, `LICENCE.md` or `LICENCE.md`
     * The MIT licence. Copy from [here](https://raw.githubusercontent.com/nf-core/tools/master/LICENSE).
 * `README.md`
     * A well written readme file in markdown format
@@ -34,7 +34,49 @@ The following files are suggested but not a hard requirement. If they are missin
     * A bash script to run the pipeline test run
 
 
-## <a name="2"></a>Error #2 - Licence check failed
+## <a name="2"></a>Error #2 - Docker file check failed
+Pipelines should have a file called `Dockerfile` in their root directory.
+This is used for automated docker image builds. This test checks that the file
+exists and contains at least the string `FROM `.
+
+## <a name="3"></a>Error #3 - Licence check failed
 nf-core pipelines must ship with an open source [MIT licence](https://choosealicense.com/licenses/mit/).
 
-This test fails if `LICENCE` or `LICENCE.md` does not contain the string `MIT`.
+This test fails if the following conditions are not met:
+
+* No licence file found
+    * `LICENSE`, `LICENSE.md`, `LICENCE.md` or `LICENCE.md`
+* Licence file contains fewer than 4 lines of text
+* File does not contain the string `without restriction`
+* Licence contains template placeholders
+    * `[year]`, `[fullname]`, `<YEAR>`, `<COPYRIGHT HOLDER>`, `<year>` or `<copyright holders>`
+
+## <a name="4"></a>Error #4 - Nextflow config check failed
+nf-core pipelines are required to be configured with a minimal set of variable
+names. This test fails or throws warnings if required variables are not set.
+
+> **Note:** These config variables must be set in `nextflow.config` or another config
+> file imported from there. Any variables set in nextflow script files (eg. `main.nf`)
+> are not checked and will be assumed to be missing.
+
+The following variables fail the test if missing:
+
+* `version`
+    * The version of this pipeline. This should correspond to a [GitHub release](https://help.github.com/articles/creating-releases/).
+* `nf_required_version`
+    * The minimum version of Nextflow required to run the pipeline.
+    * This should correspond to the `NXF_VER` version tested by Travis.
+* `manifest.description`
+    * A description of the pipeline
+* `manifest.homePage`
+    * The homepage for the pipeline. Should be the nf-core GitHub repository URL.
+* `timeline.enabled`, `trace.enabled`, `report.enabled`
+    * The nextflow timeline, trace and report should be enabled by default
+
+The following variables throw warnings if missing:
+
+* `manifest.mainScript`
+    * The filename of the main pipeline script (recommended to be `main.nf`)
+* `timeline.file`, `trace.file`, `report.file`
+    * Default filenames for the timeline, trace and report
+    * Should be `${params.outdir}/pipeline_info/trace.[workflowname].txt"
