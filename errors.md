@@ -61,9 +61,9 @@ names. This test fails or throws warnings if required variables are not set.
 
 The following variables fail the test if missing:
 
-* `version`
+* `params.version`
     * The version of this pipeline. This should correspond to a [GitHub release](https://help.github.com/articles/creating-releases/).
-* `nf_required_version`
+* `params.nf_required_version`
     * The minimum version of Nextflow required to run the pipeline.
     * This should correspond to the `NXF_VER` version tested by Travis.
 * `params.outdir`
@@ -105,5 +105,16 @@ This test fails if the following happens:
       - NXF_VER=0.27.0
       - NXF_VER=''
     ```
-    * At least one of these `NXF_VER` variables must match the `nf_required_version` version specified in the pipeline config
+    * At least one of these `NXF_VER` variables must match the `params.nf_required_version` version specified in the pipeline config
     * Other variables can be specified on these lines as long as they are space separated.
+
+## <a name="6"></a>Error #6 - Repository `README.md` tests
+The `README.md` files for a project are very important and must meet some requirements:
+
+* Nextflow badge
+    * If no Nextflow badge is found, a warning is given
+    * If a badge is found but the version doesn't match the minimum version in the config file, the test fails
+    * Example badge code:
+    ```markdown
+    [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A50.27.6-brightgreen.svg)](https://www.nextflow.io/)
+    ```
