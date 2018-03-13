@@ -12,14 +12,13 @@ These pages are still very much under construction and are likely to change a lo
 The quickest place to get help is on the nf-core Gitter channel: [https://gitter.im/nf-core/](https://gitter.im/nf-core/Lobby) - a free chat interface that integrates nicely with GitHub.
 
 # Guidelines for New Pipelines
-For now, the guidelines are pretty simple.
+For now, the guidelines are pretty simple. The below gives an outline of what is required.
+For more detail, please see the [**list of lint test error codes**](errors).
 
 ## Features
 All pipelines must adhere to the following:
 
 * Be built using Nextflow
-    * No snakemake allowed! For now, anyway. Sorry.
-    * Please note the coding guidelines below
 * An [MIT licence](https://choosealicense.com/licenses/mit/)
 * Software bundled using [Docker](https://www.docker.com/)
     * This must be at least one `Dockerfile` in the repository
