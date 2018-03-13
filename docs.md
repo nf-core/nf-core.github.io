@@ -33,6 +33,7 @@ All pipelines must adhere to the following:
     * This person should be responsible for basic maintenance and questions
 * The pipeline must not have any failures in the `nf-core lint` tests
     * These tests are run by the [nf-core/tools](https://github.com/nf-core/tools) package and validate the requirements listed on this page.
+    * You can see the list of tests and how to pass them on the [error codes page](errors).
 
 _(any point can be skipped, given a good enough reason...)_
 
