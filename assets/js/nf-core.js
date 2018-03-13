@@ -19,12 +19,13 @@ $(function() {
     }
 
     // List available pipelines
-    if ($("meta[property='og:title']").attr("content") == 'Available Pipelines'){
-        // TODO: Currently only gets 100 projects, need proper pagination
+    if ($('body').hasClass('page-pipelines')){
+        // NOTE: Currently only gets 100 projects, need proper pagination
         var org_api_url = "https://api.github.com/orgs/"+github_org+"/repos?per_page=100";
         var repos_ignore = ['cookiecutter', 'tools', 'nf-core.github.io', 'logos', 'test-datasets'];
         var repos_prod = [];
         var repos_dev = [];
+        // TODO: Have another section for archived repositories
         $.getJSON(org_api_url, function(repos) {
             var promises = [];
             $.each(repos, function(idx, repo){
@@ -54,13 +55,7 @@ $(function() {
                 if(repos_prod.length > 0){
                     var repo_lis = [];
                     $.each(repos_prod, function(idx, repo){
-                        repo_lis.push(
-                            '<li id="repo_'+repo.id+'">' +
-                                '<a href="'+repo.html_url+'">'+repo.full_name+'</a> ' +
-                                '<span class="latest-release">'+repo.releases[0].tag_name+'</span>' +
-                            '</li>'
-                        );
-                        console.log('releases 2', repo.name, repo.releases, repo, JSON.parse(JSON.stringify(repo)));
+                        repo_lis.push(make_pipeline_li(repo));
                     });
                     $('<ul/>', {
                         id: 'nf-core-repos-prod',
@@ -75,11 +70,7 @@ $(function() {
                 if(repos_dev.length > 0){
                     var repo_lis = [];
                     $.each(repos_dev, function(idx, repo){
-                        repo_lis.push(
-                            '<li id="repo_'+repo.id+'">' +
-                                '<a href="'+repo.html_url+'">'+repo.full_name+'</a>' +
-                            '</li>'
-                        );
+                        repo_lis.push(make_pipeline_li(repo));
                     });
                     $('<ul/>', {
                         id: 'nf-core-repos-dev',
@@ -98,3 +89,24 @@ $(function() {
         });
     }
 });
+
+function make_pipeline_li(repo){
+    var description = '';
+    if(repo.description){
+        description = '<p class="repo_description">'+repo.description+'</p> ';
+    }
+    var latest_release = '';
+    if(repo.releases.length > 0){
+        latest_release = '<p class="latest-release" title="'+repo.releases[0].name+'">'+repo.releases[0].tag_name+'</p>';
+    }
+    var stargazers = '';
+    if('stargazers_count' in repo){
+        stargazers += '<a href="'+repo.stargazers_url+'" class="stargazers_count"><i class="far fa-star"></i> ' + repo.stargazers_count + '</a>';
+    }
+    return '<li id="repo_'+repo.id+'">' +
+        '<h3 class="repo_name"><a href="'+repo.html_url+'">'+repo.name+'</a></h3> ' +
+        description +
+        latest_release +
+        stargazers +
+    '</li>';
+}

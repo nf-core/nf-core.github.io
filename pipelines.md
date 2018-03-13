@@ -9,14 +9,16 @@ Most pipelines follow conventions seen in the [nf-core/cookiecutter](https://git
 Got another that would fit in well? [Let us know!](https://github.com/nf-core/nf-core.github.io/issues/new)
 
 <div id="production_pipelines">
-<h2>Production Pipelines</h2>
+    <h2>Production Pipelines</h2>
 </div>
 
 
 <div id="development_pipelines">
-<h2>Pipelines in development</h2>
-<p>These pipelines aren't yet ready for the prime-time, but are under active development.</p>
-<p>Once they've had a release on GitHub, they will be classed as production-ready pipelines.</p>
+    <h2>Pipelines in development</h2>
+    <blockquote>
+        <p>These pipelines aren't yet ready for the prime-time, but are under active development.</p>
+        <p>Once they've had a release on GitHub, they will be classed as production-ready pipelines.</p>
+    </blockquote>
 </div>
 
 ### Coming soon...

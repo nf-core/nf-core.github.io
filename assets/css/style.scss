@@ -48,6 +48,73 @@ p {
     color: #a0bbd6;
 }
 
+#production_pipelines, #development_pipelines {
+    margin: 2rem 0;
+    border-bottom: 3px solid #ededed;
+}
+.nf-core-pipelines-list {
+    margin: 0 0 3rem;
+    padding: 0;
+    -webkit-column-width: 25rem;
+    -moz-column-width: 25rem;
+    -o-column-width: 25rem;
+    -ms-column-width: 25rem;
+    column-width: 25rem;
+}
+.nf-core-pipelines-list li {
+    position: relative;
+    display: inline-block;
+    width: 25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin: 0 1rem 2rem 0;
+    padding: 0.8rem 1rem;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+#nf-core-repos-dev li {
+    background-color: rgba(236, 220, 195, 0.09);
+    box-shadow: 0 0 12px 0px rgba(179, 68, 4, 0.25);
+}
+#nf-core-repos-prod li {
+    background-color: rgba(179, 228, 201, 0.08);
+    box-shadow: 0 0 12px rgba(25, 120, 119, 0.26);
+}
+.nf-core-pipelines-list .repo_name {
+    margin-bottom: 0;
+}
+.nf-core-pipelines-list .repo_description {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+.latest-release::before {
+    content: 'Version: ';
+    font-weight: normal;
+}
+.nf-core-pipelines-list .latest-release {
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #58AD6B;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    background-color: #B5DFBE;
+    padding: 1px 3px;
+    box-shadow: 0 1px 3px #ccc;
+    font-weight: bold;
+}
+.nf-core-pipelines-list .stargazers_count {
+    position: absolute;
+    display: block;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: none;
+}
+
+
+
 #markdown-toc::before {
     content: 'Table of Contents';
     color: #159957;
@@ -70,7 +137,7 @@ p {
         position: absolute;
         left: 2rem;
         top: 26rem;
-        width: 16rem;
+        width: 25rem;
         padding-left: 0;
         list-style-type: none;
     }
