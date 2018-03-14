@@ -16,7 +16,7 @@ For now, the guidelines are pretty simple. The below gives an outline of what is
 For more detail, please see the [**list of lint test error codes**](errors).
 
 If in doubt, we recommend using the [nf-core/cookiecutter](https://github.com/nf-core/cookiecutter)
-pipeline template to get started. This generates a skeleton pipeline with all of the featuers
+pipeline template to get started. This generates a skeleton pipeline with all of the features
 required to pass the below tests.
 
 ## Features
