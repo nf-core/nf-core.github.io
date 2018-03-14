@@ -62,8 +62,7 @@ $(function() {
                         class: 'nf-core-pipelines-list',
                         html: repo_lis.join('')
                     }).appendTo('#production_pipelines');
-                } else {
-                    $('#production_pipelines').hide();
+                    $('#production_pipelines').show();
                 }
 
                 // Pipelines under development
@@ -77,15 +76,20 @@ $(function() {
                         class: 'nf-core-pipelines-list',
                         html: repo_lis.join('')
                     }).appendTo('#development_pipelines');
-                } else {
-                    $('#development_pipelines').hide();
+                    $('#development_pipelines').show();
                 }
+
+                // Show the page content
+                $('#pipelines_content').slideDown();
+                $('#pipelines_loading').slideUp();
 
             });
         }).fail(function(e) {
             console.error("Cannot query GitHub API:", e.responseJSON);
-            $('#production_pipelines').html('<p><em>Oops - there was a problem querying the GitHub API, sorry!</em></p');
-            $('#development_pipelines').hide();
+            $('#pipelines_loading').html(
+                'Oops - there was a problem querying the GitHub API, sorry! <br>' +
+                'Please try again later, or <a href="https://github.com/nf-core/nf-core.github.io/issues">let us know</a>.'
+            );
         });
     }
 });
@@ -104,7 +108,7 @@ function make_pipeline_li(repo){
         stargazers += '<a href="'+repo.stargazers_url+'" class="stargazers_count"><i class="far fa-star"></i> ' + repo.stargazers_count + '</a>';
     }
     return '<li id="repo_'+repo.id+'">' +
-        '<h3 class="repo_name"><a href="'+repo.html_url+'">'+repo.name+'</a></h3> ' +
+        '<h3 class="repo_name"><a href="'+repo.html_url+'">'+repo.full_name+'</a></h3> ' +
         description +
         latest_release +
         stargazers +

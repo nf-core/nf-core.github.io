@@ -48,9 +48,15 @@ p {
     color: #a0bbd6;
 }
 
+#pipelines_loading {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    text-align: center;
+}
 #production_pipelines, #development_pipelines {
     margin: 2rem 0;
-    border-bottom: 3px solid #ededed;
 }
 .nf-core-pipelines-list {
     margin: 0 0 3rem;
@@ -66,7 +72,7 @@ p {
     display: inline-block;
     width: 25rem;
     border: 1px solid #ccc;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     margin: 0 1rem 2rem 0;
     padding: 0.8rem 1rem;
     -webkit-column-break-inside: avoid;
@@ -85,6 +91,7 @@ p {
 .nf-core-pipelines-list .repo_description {
     margin: 5px 0;
     font-size: 0.9rem;
+    text-align: left;
 }
 .latest-release::before {
     content: 'Version: ';
