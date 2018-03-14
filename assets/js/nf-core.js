@@ -41,6 +41,11 @@ $(function() {
                         var releases_api_url = "https://api.github.com/repos/"+repo.full_name+"/releases";
                         // Call the API endpoint to get information about releases
                         var jqxhr = $.getJSON(releases_api_url).done(function(releases) {
+                            // Filter out prereleases and draft releases
+                            releases = $.grep(releases, function (el, i) {
+                                if(el.prerelease || el.draft) return false;
+                                else return true;
+                            });
                             // Add to the repo object to access this later
                             repo.releases = releases;
                             // We have some releases - production pipeline
@@ -60,6 +65,11 @@ $(function() {
 
             // Wait for all of the release ajax calls to finish
             $.when.apply($, promises).done(function(){
+
+                // Sort the lists of pipelines
+                repos_prod.sort(sort_pipelines);
+                repos_dev.sort(sort_pipelines);
+                repos_archived.sort(sort_pipelines);
 
                 // Production grade pipelines
                 if(repos_prod.length > 0){
@@ -117,6 +127,12 @@ $(function() {
         });
     }
 });
+
+function sort_pipelines(a,b) {
+  if (a.full_name.toLowerCase() < b.full_name.toLowerCase()) return -1;
+  if (a.full_name.toLowerCase() > b.full_name.toLowerCase()) return 1;
+  return 0;
+}
 
 function make_pipeline_li(repo){
     var description = '';
