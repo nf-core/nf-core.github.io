@@ -55,7 +55,8 @@ p {
     border-radius: 0.3rem;
     text-align: center;
 }
-#production_pipelines, #development_pipelines {
+#pipelines_content > div {
+    display: none; /* Initially hidden whilst loading */
     margin: 2rem 0;
 }
 .nf-core-pipelines-list {
@@ -79,11 +80,11 @@ p {
     page-break-inside: avoid;
     break-inside: avoid-column;
 }
-#nf-core-repos-dev li {
-    background-color: rgba(236, 220, 195, 0.09);
-}
 #nf-core-repos-prod li {
     background-color: rgba(179, 228, 201, 0.08);
+}
+#nf-core-repos-dev li, #archived_pipelines li {
+    background-color: rgba(236, 220, 195, 0.09);
 }
 .nf-core-pipelines-list .repo_name {
     margin-bottom: 0;
@@ -93,19 +94,26 @@ p {
     font-size: 0.9rem;
     text-align: left;
 }
+.nf-core-pipelines-list .pipeline-badge {
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    background-color: #ededed;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    padding: 1px 3px;
+    box-shadow: 0 1px 3px #ccc;
+}
 .latest-release::before {
     content: 'Version: ';
     font-weight: normal;
 }
 .nf-core-pipelines-list .latest-release {
-    margin: 5px 0;
-    display: inline-block;
-    border: 1px solid #58AD6B;
-    border-radius: 0.2rem;
-    font-size: 0.8rem;
     background-color: #B5DFBE;
-    padding: 1px 3px;
-    box-shadow: 0 1px 3px #ccc;
+    border-color: #58AD6B;
+    font-weight: bold;
+}
+.nf-core-pipelines-list .archived-lastpush span {
     font-weight: bold;
 }
 .nf-core-pipelines-list .stargazers_count {

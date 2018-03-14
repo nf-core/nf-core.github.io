@@ -20,34 +20,44 @@ $(function() {
 
     // List available pipelines
     if ($('body').hasClass('page-pipelines')){
-        // NOTE: Currently only gets 100 projects, need proper pagination
+
+        // NOTE: Currently limited to 100 repositories, need proper pagination for more
         var org_api_url = "https://api.github.com/orgs/"+github_org+"/repos?per_page=100";
         var repos_ignore = ['cookiecutter', 'tools', 'nf-core.github.io', 'logos', 'test-datasets'];
         var repos_prod = [];
         var repos_dev = [];
+        var repos_archived = [];
+
         // TODO: Have another section for archived repositories
         $.getJSON(org_api_url, function(repos) {
             var promises = [];
             $.each(repos, function(idx, repo){
                 if(repos_ignore.indexOf(repo.name) == -1){
-                    var releases_api_url = "https://api.github.com/repos/"+repo.full_name+"/releases";
-                    // Call the API endpoint to get information about releases
-                    var jqxhr = $.getJSON(releases_api_url).done(function(releases) {
-                        // Add to the repo object to access this later
-                        repo.releases = releases;
-                        // We have some releases - production pipeline
-                        if(repo.releases.length > 0){
-                            repos_prod.push(repo);
-                        }
-                        // No releases - pipeline in development
-                        else {
-                            repos_dev.push(repo);
-                        }
-                    });
-                    // Save this ajax promise so we can trigger code when it's done
-                    promises.push(jqxhr);
+                    // Pipeline is archived
+                    // NB: If we have *only* archived pipelines, page won't render. Seems unlikely though..!
+                    if(repo.archived){
+                        repos_archived.push(repo);
+                    } else {
+                        var releases_api_url = "https://api.github.com/repos/"+repo.full_name+"/releases";
+                        // Call the API endpoint to get information about releases
+                        var jqxhr = $.getJSON(releases_api_url).done(function(releases) {
+                            // Add to the repo object to access this later
+                            repo.releases = releases;
+                            // We have some releases - production pipeline
+                            if(repo.releases.length > 0){
+                                repos_prod.push(repo);
+                            }
+                            // No releases - pipeline in development
+                            else {
+                                repos_dev.push(repo);
+                            }
+                        });
+                        // Save this ajax promise so we can trigger code when it's done
+                        promises.push(jqxhr);
+                    }
                 }
             });
+
             // Wait for all of the release ajax calls to finish
             $.when.apply($, promises).done(function(){
 
@@ -79,6 +89,20 @@ $(function() {
                     $('#development_pipelines').show();
                 }
 
+                // Archived pipelines
+                if(repos_archived.length > 0){
+                    var repo_lis = [];
+                    $.each(repos_archived, function(idx, repo){
+                        repo_lis.push(make_pipeline_li(repo));
+                    });
+                    $('<ul/>', {
+                        id: 'nf-core-repos-archived',
+                        class: 'nf-core-pipelines-list',
+                        html: repo_lis.join('')
+                    }).appendTo('#archived_pipelines');
+                    $('#archived_pipelines').show();
+                }
+
                 // Show the page content
                 $('#pipelines_content').slideDown();
                 $('#pipelines_loading').slideUp();
@@ -96,12 +120,17 @@ $(function() {
 
 function make_pipeline_li(repo){
     var description = '';
-    if(repo.description){
+    if('description' in repo && repo.description){
         description = '<p class="repo_description">'+repo.description+'</p> ';
     }
     var latest_release = '';
-    if(repo.releases.length > 0){
-        latest_release = '<p class="latest-release" title="'+repo.releases[0].name+'">'+repo.releases[0].tag_name+'</p>';
+    if('releases' in repo && repo.releases.length > 0){
+        latest_release = '<p class="latest-release pipeline-badge" title="'+repo.releases[0].name+'">'+repo.releases[0].tag_name+'</p>';
+    }
+    var archived = '';
+    if('archived' in repo && repo.archived && 'pushed_at' in repo){
+        pushed_at_date = repo.pushed_at.substring(0, repo.pushed_at.indexOf('T'));
+        archived = '<p class="archived-lastpush pipeline-badge">Last update: <span>'+pushed_at_date+'</span></p>';
     }
     var stargazers = '';
     if('stargazers_count' in repo){
@@ -111,6 +140,7 @@ function make_pipeline_li(repo){
         '<h3 class="repo_name"><a href="'+repo.html_url+'">'+repo.full_name+'</a></h3> ' +
         description +
         latest_release +
+        archived +
         stargazers +
     '</li>';
 }
