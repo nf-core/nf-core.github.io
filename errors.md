@@ -118,3 +118,9 @@ The `README.md` files for a project are very important and must meet some requir
     ```markdown
     [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A50.27.6-brightgreen.svg)](https://www.nextflow.io/)
     ```
+* Bioconda badge
+    * If your pipeline contains a file called `environment.yml`, a bioconda badge is required
+    * Required badge code:
+    ```markdown
+    [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/)
+    ```

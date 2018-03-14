@@ -48,6 +48,86 @@ p {
     color: #a0bbd6;
 }
 
+#pipelines_loading {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+#pipelines_content > div {
+    display: none; /* Initially hidden whilst loading */
+    margin: 2rem 0;
+}
+.nf-core-pipelines-list {
+    margin: 0 0 3rem;
+    padding: 0;
+    -webkit-column-width: 25rem;
+    -moz-column-width: 25rem;
+    -o-column-width: 25rem;
+    -ms-column-width: 25rem;
+    column-width: 25rem;
+}
+.nf-core-pipelines-list li {
+    position: relative;
+    display: inline-block;
+    width: 25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    margin: 0 1rem 2rem 0;
+    padding: 0.8rem 1rem;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+#nf-core-repos-prod li {
+    background-color: rgba(179, 228, 201, 0.08);
+}
+#nf-core-repos-dev li, #archived_pipelines li {
+    background-color: rgba(236, 220, 195, 0.09);
+}
+.nf-core-pipelines-list .repo_name {
+    margin-bottom: 0;
+}
+.nf-core-pipelines-list .repo_description {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+.nf-core-pipelines-list .pipeline-badge {
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    background-color: #ededed;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    padding: 1px 3px;
+    box-shadow: 0 1px 3px #ccc;
+}
+.latest-release::before {
+    content: 'Version: ';
+    font-weight: normal;
+}
+.nf-core-pipelines-list .latest-release {
+    background-color: #B5DFBE;
+    border-color: #58AD6B;
+    font-weight: bold;
+}
+.nf-core-pipelines-list .archived-lastpush span {
+    font-weight: bold;
+}
+.nf-core-pipelines-list .stargazers_count {
+    position: absolute;
+    display: block;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: none;
+}
+
+
+
 #markdown-toc::before {
     content: 'Table of Contents';
     color: #159957;
@@ -68,9 +148,9 @@ p {
     }
     #markdown-toc {
         position: absolute;
-        left: 1rem;
+        left: 2rem;
         top: 26rem;
-        width: 18rem;
+        width: 25rem;
         padding-left: 0;
         list-style-type: none;
     }
@@ -81,6 +161,6 @@ p {
     .main-content.has-toc {
         max-width: none;
         padding: 2rem;
-        margin: 0 0 0 19rem;
+        margin: 0 2rem 0 17rem;
     }
 }
