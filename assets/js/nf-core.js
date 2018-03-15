@@ -150,7 +150,7 @@ function make_pipeline_li(repo){
     }
     var stargazers = '';
     if('stargazers_count' in repo){
-        stargazers += '<a href="'+repo.stargazers_url+'" class="stargazers_count"><i class="far fa-star"></i> ' + repo.stargazers_count + '</a>';
+        stargazers += '<a href="'+repo.html_url+'/stargazers" class="stargazers_count"><i class="far fa-star"></i> ' + repo.stargazers_count + '</a>';
     }
     return '<li id="repo_'+repo.id+'">' +
         '<h3 class="repo_name"><a href="'+repo.html_url+'">'+repo.full_name+'</a></h3> ' +
