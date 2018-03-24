@@ -124,3 +124,31 @@ The `README.md` files for a project are very important and must meet some requir
     ```markdown
     [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/)
     ```
+
+## <a name="7"></a>Error #7 - Pipeline and container version numbers
+
+> This test only runs when `--release` is set or `$TRAVIS_BRANCH` is equal to `master`
+
+These tests look at `params.container`, `process.container` and `$TRAVIS_TAG`, only
+if they are set.
+
+* Container name must have a tag specified (eg. `nfcore/pipeline:version`)
+* Container tag / `$TRAVIS_TAG` must contain only numbers and dots
+* Tags and `$TRAVIS_TAG` must all match one another
+
+
+## <a name="8"></a>Error #8 - Conda environment tests
+
+> These tests only run when your pipeline has a root file called `environment.yml`
+
+* The environment `name` must match the pipeline name
+    * The pipeline name is found from the Nextflow config `manifest.homePage`,
+      which assumes that the URL is in the format `github.com/nf-core/[pipeline-name]`
+    * Example: For `github.com/nf-core/test` the conda environment name should be `nfcore-test`
+* Each dependency listed must have a version number pinned, eg. `toolname=1.6.8`
+
+Each dependency is checked using the [Anaconda API service](https://api.anaconda.org/docs).
+Warnings are generated if:
+
+* The package cannot be found on any of the listed channels
+* A newer version of the package is available
