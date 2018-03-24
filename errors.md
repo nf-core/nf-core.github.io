@@ -148,7 +148,7 @@ if they are set.
 * Each dependency listed must have a version number pinned, eg. `toolname=1.6.8`
 
 Each dependency is checked using the [Anaconda API service](https://api.anaconda.org/docs).
-Warnings are generated if:
+Dependency sublists (eg. `- pip`) are ignored. Specific channels (eg. `conda-forge::openjdk`) are ok.
 
-* The package cannot be found on any of the listed channels
-* A newer version of the package is available
+* (Test failure) The package cannot be found on any of the listed channels
+* (Test warning) A newer version of the package is available
