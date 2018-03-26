@@ -71,9 +71,10 @@ The following variables fail the test if missing:
 * `manifest.description`
     * A description of the pipeline
 * `manifest.homePage`
-    * The homepage for the pipeline. Should be the nf-core GitHub repository URL.
-* `timeline.enabled`, `trace.enabled`, `report.enabled`
-    * The nextflow timeline, trace and report should be enabled by default
+    * The homepage for the pipeline. Should be the nf-core GitHub repository URL,
+      so beginning with `https://github.com/nf-core/`
+* `timeline.enabled`, `trace.enabled`, `report.enabled`, `dag.enabled`
+    * The nextflow timeline, trace, report and DAG should be enabled by default
 * `process.cpus`, `process.memory`, `process.time`
     * Default CPUs, memory and time limits for tasks
 
@@ -81,9 +82,11 @@ The following variables throw warnings if missing:
 
 * `manifest.mainScript`
     * The filename of the main pipeline script (recommended to be `main.nf`)
-* `timeline.file`, `trace.file`, `report.file`
+* `timeline.file`, `trace.file`, `report.file`, `dag.file`
     * Default filenames for the timeline, trace and report
-    * Should be `${params.outdir}/pipeline_info/trace.[workflowname].txt"``
+    * Should be set to a results folder, eg: `${params.outdir}/pipeline_info/trace.[workflowname].txt"``
+    * The DAG file path should end with `.svg`
+        * If Graphviz is not installed, Nextflow will generate a `.dot` file instead
 * `process.container`
     * A single default container for use by all processes
 * `params.reads`
@@ -148,7 +151,8 @@ if they are set.
 * Each dependency listed must have a version number pinned, eg. `toolname=1.6.8`
 
 Each dependency is checked using the [Anaconda API service](https://api.anaconda.org/docs).
-Warnings are generated if:
+Dependency sublists (eg. `- pip`) are ignored.
+Dependency-specific channels (eg. `conda-forge::openjdk`) are ok.
 
-* The package cannot be found on any of the listed channels
-* A newer version of the package is available
+* (Test failure) The package cannot be found on any of the listed channels
+* (Test warning) A newer version of the package is available
