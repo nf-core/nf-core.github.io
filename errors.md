@@ -148,11 +148,45 @@ if they are set.
     * The pipeline name is found from the Nextflow config `manifest.homePage`,
       which assumes that the URL is in the format `github.com/nf-core/[pipeline-name]`
     * Example: For `github.com/nf-core/test` the conda environment name should be `nfcore-test`
-* Each dependency listed must have a version number pinned, eg. `toolname=1.6.8`
 
 Each dependency is checked using the [Anaconda API service](https://api.anaconda.org/docs).
-Dependency sublists (eg. `- pip`) are ignored.
-Dependency-specific channels (eg. `conda-forge::openjdk`) are ok.
+Dependency sublists are ignored with the exception of `- pip`: these packages are also checked
+for pinned version numbers and checked using the [PyPI JSON API](https://wiki.python.org/moin/PyPIJSON).
 
-* (Test failure) The package cannot be found on any of the listed channels
+Note that conda dependencies with pinned channels (eg. `conda-forge::openjdk`) are fine
+and should be handled by the linting properly.
+
+Each dependency can have the following lint failures and warnings:
+
+* (Test failure) Dependency does not have a pinned version number, eg. `toolname=1.6.8`
+* (Test failure) The package cannot be found on any of the listed conda channels (or PyPI if `pip`)
 * (Test warning) A newer version of the package is available
+
+## <a name="9"></a>Error #9 - Dockerfile for use with Conda environments
+
+> This test only runs if there is both `environment.yml`
+> and `Dockerfile` present in the workflow.
+
+If a workflow has a conda `environment.yml` file (see above), the `Dockerfile` should use this
+to create the container. Such `Dockerfile`s can usually be very short, eg:
+
+```Dockerfile
+FROM continuumio/miniconda
+MAINTAINER Your Name <your@email.com>
+LABEL authors="your@email.com" \
+    description="Docker image containing all requirements for the nf-core/EXAMPLE pipeline"
+
+COPY environment.yml /
+RUN conda update -n base conda && \
+    conda env create -f /environment.yml && \
+    conda clean -a
+ENV PATH /opt/conda/envs/nfcore-EXAMPLE/bin:$PATH
+```
+
+To enforce this minimal `Dockerfile` and check for common copy+paste errors, we require
+that the above template is used.
+Failures are generated if the `FROM`, `COPY`, `RUN` and `ENV` statements above are not present.
+These lines must be an exact copy of the above example, with the exception that
+the `ENV PATH` must reference the name of your pipeline instead of `nfcore-EXAMPLE`.
+
+Additional lines and different metadata can be added without causing the test to fail.
