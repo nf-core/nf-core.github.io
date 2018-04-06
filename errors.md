@@ -171,15 +171,12 @@ If a workflow has a conda `environment.yml` file (see above), the `Dockerfile` s
 to create the container. Such `Dockerfile`s can usually be very short, eg:
 
 ```Dockerfile
-FROM continuumio/miniconda
-MAINTAINER Your Name <your@email.com>
+FROM nfcore/base
 LABEL authors="your@email.com" \
-    description="Docker image containing all requirements for the nf-core/EXAMPLE pipeline"
+      description="Docker image containing all requirements for nf-core/EXAMPLE pipeline"
 
 COPY environment.yml /
-RUN conda update -n base conda && \
-    conda env create -f /environment.yml && \
-    conda clean -a
+RUN conda env create -f /environment.yml && conda clean -a
 ENV PATH /opt/conda/envs/nfcore-EXAMPLE/bin:$PATH
 ```
 
