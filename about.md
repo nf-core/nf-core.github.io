@@ -14,6 +14,7 @@ A number of groups are involved in running, maintaining and developing pipelines
 
 * The [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), SciLifeLab Sweden
 * The [Quantitative Biology Center](qbic.life) (QBiC), Universität Tübingen, Germany
+* The [Centre for Genomic Regulation](http://www.crg.eu/) (CRG), Barcelona, Spain
 * The [Genomics Institute of Singapore](https://www.a-star.edu.sg/gis) (GIS), A*STAR, Singapore
 * The Competence Centre for Genome Analysis Kiel, Kiel University, Germany
 * The [International Agency for Research on Cancer](https://www.iarc.fr) (IARC), World Health Organisation, Lyon, France
