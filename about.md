@@ -15,6 +15,7 @@ A number of groups are involved in running, maintaining and developing pipelines
 * The [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), SciLifeLab Sweden
 * The [Quantitative Biology Center](qbic.life) (QBiC), Universität Tübingen, Germany
 * The [Genomics Institute of Singapore](https://www.a-star.edu.sg/gis) (GIS), A*STAR, Singapore
+* The [Institute of Clinical Molecular Biology](https://www.ikmb.uni-kiel.de/) (IKMB), Kiel University, Germany
 
 Is your group missing? Please [submit a pull request](https://github.com/nf-core/nf-core.github.io/blob/master/about.md) to add yourself!
 
@@ -36,5 +37,7 @@ nf-core is by design a collaborative effort, and would not exist if it were not 
 * GIS Singapore
     * Andreas Wilm ([@andreas-wilm](https://github.com/andreas-wilm))
     * Chih Chuan ([@shihcc](https://github.com/shihcc))
+* IKMB Kiel
+    * Mark Hoeppner ([@marchoeppner](https://github.com/marchoeppner))
 
 Want to be added to this list? Please [submit a pull request](https://github.com/nf-core/nf-core.github.io/blob/master/about.md) to add yourself!
