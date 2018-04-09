@@ -45,6 +45,8 @@ If possible, it's great if pipelines can also have:
 
 * Software bundled using [bioconda](https://bioconda.github.io/)
     * See below for how to use a bioconda env script automatically build docker and singularity containers, meaning you have a single file to maintain.
+* Optimised output file formats
+    * Pipelines should generate `CRAM` alignment files by default, but have a `--bam` option to generate `BAM` outputs if required by the user.
 * Explicit support for running in cloud environments
     * For example, use of [AWS-iGenomes](https://ewels.github.io/AWS-iGenomes/)
 * Benchmarks from running on cloud environments such as [AWS](https://aws.amazon.com/)
