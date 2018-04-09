@@ -16,6 +16,7 @@ A number of groups are involved in running, maintaining and developing pipelines
 * The [Quantitative Biology Center](qbic.life) (QBiC), Universität Tübingen, Germany
 * The [Genomics Institute of Singapore](https://www.a-star.edu.sg/gis) (GIS), A*STAR, Singapore
 * The Competence Centre for Genome Analysis Kiel, Kiel University, Germany
+* The [International Agency for Research on Cancer](https://www.iarc.fr) (IARC), World Health Organisation, Lyon, France
 
 Is your group missing? Please [submit a pull request](https://github.com/nf-core/nf-core.github.io/blob/master/about.md) to add yourself!
 
@@ -39,5 +40,8 @@ nf-core is by design a collaborative effort, and would not exist if it were not 
     * Chih Chuan ([@shihcc](https://github.com/shihcc))
 * Competence Centre for Genome Analysis Kiel
     * Mark Hoeppner ([@marchoeppner](https://github.com/marchoeppner))
+* International Agency for Research on Cancer
+    * Matthieu Foll ([@mfoll](https://github.com/mfoll))
+    * Tiffany Delhomme ([@tdelhomme](https://github.com/tdelhomme))
 
 Want to be added to this list? Please [submit a pull request](https://github.com/nf-core/nf-core.github.io/blob/master/about.md) to add yourself!
