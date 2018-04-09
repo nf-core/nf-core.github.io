@@ -28,6 +28,7 @@ Note that tagged pipeline code and software containers means that you can rerun 
 For bonus points, it's recommended that pipelines have (in addition to above):
 
 * Software bundled using [bioconda](https://bioconda.github.io/)
+* Optimised file formats with small disk space footprint where possible
 * Explicit support for running in cloud environments (eg. use of [AWS-iGenomes](https://ewels.github.io/AWS-iGenomes/))
 * Benchmarks from running on cloud environments such as [AWS](https://aws.amazon.com/)
 
