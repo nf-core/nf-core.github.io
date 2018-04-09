@@ -1,3 +1,4 @@
 title: nf-core
 description: A collection of high quality Nextflow pipelines.
 theme: jekyll-theme-cayman
+google_analytics: "UA-68098153-2"
