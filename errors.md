@@ -144,10 +144,10 @@ if they are set.
 
 > These tests only run when your pipeline has a root file called `environment.yml`
 
-* The environment `name` must match the pipeline name
+* The environment `name` must match the pipeline name and version
     * The pipeline name is found from the Nextflow config `manifest.homePage`,
       which assumes that the URL is in the format `github.com/nf-core/[pipeline-name]`
-    * Example: For `github.com/nf-core/test` the conda environment name should be `nfcore-test`
+    * Example: For `github.com/nf-core/test` version 1.4, the conda environment name should be `nfcore-test-1.4`
 
 Each dependency is checked using the [Anaconda API service](https://api.anaconda.org/docs).
 Dependency sublists are ignored with the exception of `- pip`: these packages are also checked
