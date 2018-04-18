@@ -62,11 +62,10 @@ p {
 .nf-core-pipelines-list {
     margin: 0 0 3rem;
     padding: 0;
-    -webkit-column-width: 25rem;
-    -moz-column-width: 25rem;
-    -o-column-width: 25rem;
-    -ms-column-width: 25rem;
-    column-width: 25rem;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 .nf-core-pipelines-list li {
     position: relative;
